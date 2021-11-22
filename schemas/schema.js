@@ -4,7 +4,8 @@ import createSchema from 'part:@sanity/base/schema-creator'
 // Then import schema types from any plugins that might expose themd
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
-// Then we give our schema to the builder and provide the result to Sanity
+// Then we give our schema to the builder and provide the result to Sanity. 
+// Hello world
 export default createSchema({
   // We name our schema
   name: 'default',
