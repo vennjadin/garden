@@ -25,16 +25,46 @@ export default createSchema({
       
       // Now we proceed to list the fields of our document
       fields: [
-        // This document has only one field
         {
+        // This document has only one field
           // The display name for this field
           title: "Name",
 
           // The identifier for this field used in the api's
-          name: "name",
+          name: "person",
 
           // The type of this field
           type: "string",
+        }
+      ]
+    }
+  ]),
+  types: schemaTypes.concat([
+    {
+      title: 'Book',
+      name: 'book',
+      type: 'document',
+      fields: [
+        {
+          title: 'Title',
+          name: 'title',
+          type: 'string'
+        },
+    
+        {
+          title: 'Cover',
+          name: 'cover',
+          type: 'image'
+        },
+        
+        {
+          title: 'Author',
+          name: 'author',
+          // A reference is a way to point to another document
+          type: 'reference',
+          // This reference is only allowed to point to a document of the type person,
+          // we could list more types, but let's keep this simple:
+            to: [{type: 'person'}]
         }
       ]
     }
